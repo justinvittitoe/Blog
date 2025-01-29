@@ -9,8 +9,10 @@ const grabForm = function(event) {
     const title = document.getElementById('title').value;
     const content =  document.getElementById('content').value;
     const newBlogPost = {username: username,title: title,content: content};
-    localStorage.setItem('blogPosts',JSON.stringify(newBlogPost))
-    storeLocalStorage(newBlogPost)
+    localStorage.setItem('newBlogPost',JSON.stringify(newBlogPost));
+    
+    storeLocalStorage(newBlogPost);
+
     if (username && title && content) {
         redirectPage('Blog.html')
     } else {

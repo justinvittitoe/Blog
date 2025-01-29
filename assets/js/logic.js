@@ -35,11 +35,10 @@ modebtn.addEventListener('click',toggle)
 
 // TODO: Create a function called `storeLocalStorage` that takes a given object and saves the new data to the existing blog data in local storage.
 function storeLocalStorage(newBlogPost) {
-  localStorage.getItem('blogPosts')
-  let blogPosts = [];
-  blogPosts.push(newBlogPost)
-  localStorage.setItem('blogPosts')
-  
+  console.log(newBlogPost)
+  const blogPosts = JSON.parse(localStorage.getItem('blogPosts')) || [];
+  blogPosts.push(newBlogPost);
+  localStorage.setItem('blogPosts', JSON.stringify(blogPosts));
 }
 
 
